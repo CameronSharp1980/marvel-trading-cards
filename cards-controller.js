@@ -3,12 +3,14 @@ function CardsController() {
 
   this.add = function add(id) {
     // console.log('characterId', id)
+    if (marvelService.checkTeamLength()) {
     marvelService.addToMyCharacters(id);
     updateRoster()
-    marvelService.removeMarvelCharacter(id);
-    updateMarvel(marvelService.getMarvelCharacters())
+      marvelService.removeMarvelCharacter(id);
+      updateMarvel(marvelService.getMarvelCharacters())
+    }
   }
-  this.remove = function remove(id){
+  this.remove = function remove(id) {
     marvelService.addToMarvelCharacters(id);
     updateMarvel(marvelService.getMarvelCharacters())
     marvelService.removeMyCharacter(id)
@@ -30,7 +32,7 @@ function CardsController() {
       var character = list[i];
       character.thumbnail.path = character.thumbnail.path.replace('http:', '')
       marvelTemplate += `
-      <div class="card col-sm-12 col-md-6 col-lg-3 thumbnail">
+      <div class="card col-sm-12 col-md-6 col-lg-4 thumbnail">
         <img src="${character.thumbnail.path}.${character.thumbnail.extension}" width="100px">
         <h3>${character.name}</h3>
         <div>
@@ -51,10 +53,10 @@ function CardsController() {
     myCharsElem.innerHTML = ''
     var teamTemplate = ''
     for (var i in myChars) {
-        var myChar = myChars[i];
-        console.log(myChar)
-        teamTemplate += `
-        <div class="card col-sm-12 col-md-6 col-lg-3 thumbnail">
+      var myChar = myChars[i];
+      console.log(myChar)
+      teamTemplate += `
+        <div class="card col-sm-12 col-md-6 col-lg-4 thumbnail">
          <img src="${myChar.thumbnail.path}.${myChar.thumbnail.extension}" width="100px">
          <h3>${myChar.name}</h3>
           <div>
