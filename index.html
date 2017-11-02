@@ -4,24 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <div class="container wrapper">
+    <div id="marvel-characters" class="row text-center">
+      <!-- <div class="card col-sm-12 col-md-6 col-lg-3 thumbnail">
+            <img src="${character.thumbnail.path}.${character.thumbnail.extension}" width="100px">
+            <h3>${character.name}</h3>
+            <div>
+              <button class="btn-success" id="${character.id}" onclick="app.cardsCtrl.add('${character.id}')">Add to Team</button>
+            </div>
+          </div> -->
+    </div>
 
-  <div id="marvel-characters">
+    <div id="my-characters" class="row">
 
+    </div>
   </div>
-
-  <div id="my-characters">
-
-  </div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  
+
   <script src="marvel-service.js"></script>
 
   <script src="cards-controller.js"></script>
-  
+
   <script src="app.js"></script>
 </body>
 

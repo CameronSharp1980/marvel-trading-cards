@@ -1,0 +1,15 @@
+.body{
+    height: 100vh;
+}
+#marvel-characters{
+    height: 70vh;
+    overflow: auto;
+}
+#my-characters{
+    height: 30vh;
+    overflow: auto;
+    background-color: grey;
+}
+.card{
+    height: 250px;
+}
